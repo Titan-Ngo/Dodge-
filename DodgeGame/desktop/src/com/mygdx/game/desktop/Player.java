@@ -19,10 +19,16 @@ public class Player {
 	// Instance vars
 	private Sprite sprite;
 	private Texture texture;
+	private float velocity;
+	private int numLives = 3;
+	
+	// Public coordinates
+	public float x;
+	public float y;
 	
 	/**
-	 * Constructor
-	 * args: playerNum, either 1 or 2 for player1's position or player2's position
+	 * Constructor for a Player object.
+	 * @param playerNum, either 1 or 2 for player1's position or player2's position.
 	 */
 	public Player(int playerNum) {
 		texture = new Texture(Gdx.files.internal("sprites/smallDodgeCat.jpg"));
@@ -35,12 +41,38 @@ public class Player {
 		}
 	}
 	
-	public void setPosition(float x, float y) {
-		sprite.setPosition(x, y);
-	}
-	
 	public void draw(SpriteBatch batch) {
 		sprite.draw(batch);
+	}
+	
+	// Player movement methods
+	
+	/**
+	 * Sets the position of the Player object.
+	 * @param x, x pos to be set
+	 * @param y, y pos to be set
+	 */
+	public void setPosition(float x, float y) {
+		this.x = x;
+		this.y = y;
+		sprite.setPosition(this.x, this.y);
+		// call updateHitbox
+	}
+	
+	/** Moves x by an amount xDiff */
+	public void moveX(float xDiff) {
+		sprite.setPosition(this.x + xDiff, this.y);
+	}
+	
+	/** Moves y by an amount yDiff */
+	public void moveY(float yDiff) {
+		 sprite.setPosition(this.x, this.y + yDiff);
+	}
+	
+	/**
+	 * 
+	 */
+	public void shootBullets() {
 	}
 
 }
