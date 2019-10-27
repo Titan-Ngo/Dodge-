@@ -1,6 +1,6 @@
 # Dodge!
 
-A multi-player dodge ball game. Players are divided into two teams(red and blue) and balls will automatically shoot out. The player's circle is always green. If a player is hit by the opossing team's ball they are out of the game. The first team to lose all members loses.
+A multi-player dodge ball game. Players are divided into two teams(red and blue) and balls will automatically shoot out. The player's circle is always green. If a player is hit by the opossing team's ball they are out of the game. The first team to lose all members loses the game.
 
 # Stakeholder
 
